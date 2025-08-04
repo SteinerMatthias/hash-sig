@@ -42,7 +42,6 @@ where
         result[..OUTPUT_LENGTH].try_into().unwrap()
     }
 
-    #[cfg(test)]
     fn internal_consistency_check() {
         assert!(
             OUTPUT_LENGTH < 256 / 8,

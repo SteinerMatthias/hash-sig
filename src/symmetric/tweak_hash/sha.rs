@@ -117,7 +117,6 @@ where
         result[0..HASH_LEN].try_into().unwrap()
     }
 
-    #[cfg(test)]
     fn internal_consistency_check() {
         assert!(
             PARAMETER_LEN < 256 / 8,

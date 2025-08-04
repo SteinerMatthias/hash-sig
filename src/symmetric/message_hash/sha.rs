@@ -69,7 +69,6 @@ where
         bytes_to_chunks(&hash[0..NUM_CHUNKS * CHUNK_SIZE / 8], CHUNK_SIZE)
     }
 
-    #[cfg(test)]
     fn internal_consistency_check() {
         assert!(
             [1, 2, 4, 8].contains(&CHUNK_SIZE),
