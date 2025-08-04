@@ -308,12 +308,12 @@ where
         // pos_in_chain and chain_index in u8.
 
         assert!(
-            IE::BASE <= 1 << 8,
-            "Generalized XMSS: Encoding base too large, must be at most 2^8"
+            IE::BASE <= 1 << 9,
+            "Generalized XMSS: Encoding base too large, must be at most 2^9"
         );
         assert!(
-            IE::DIMENSION <= 1 << 8,
-            "Generalized XMSS: Encoding dimension too large, must be at most 2^8"
+            IE::DIMENSION <= 1 << 9,
+            "Generalized XMSS: Encoding dimension too large, must be at most 2^9"
         );
     }
 }

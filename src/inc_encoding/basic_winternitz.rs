@@ -82,12 +82,12 @@ impl<MH: MessageHash, const CHUNK_SIZE: usize, const NUM_CHUNKS_CHECKSUM: usize>
 
         // base and dimension must not be too large
         assert!(
-            CHUNK_SIZE <= 8,
-            "Winternitz Encoding: Base must be at most 2^8"
+            CHUNK_SIZE <= 9,
+            "Winternitz Encoding: Base must be at most 2^9"
         );
         assert!(
-            Self::DIMENSION <= 1 << 8,
-            "Winternitz Encoding: Dimension must be at most 2^8"
+            Self::DIMENSION <= 1 << 9,
+            "Winternitz Encoding: Dimension must be at most 2^9"
         );
 
         // chunk size and base of MH must be consistent
