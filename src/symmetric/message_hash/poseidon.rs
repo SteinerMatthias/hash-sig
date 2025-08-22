@@ -172,7 +172,6 @@ where
         decode_to_chunks::<DIMENSION, BASE, HASH_LEN_FE>(&hash_fe).to_vec()
     }
 
-    #[cfg(test)]
     fn internal_consistency_check() {
         // Check that Poseidon of width 24 is enough
         // Note: This block should be changed if we decide to support other Poseidon

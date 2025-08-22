@@ -70,7 +70,6 @@ where
         })
     }
 
-    #[cfg(test)]
     fn internal_consistency_check() {
         // No check is needed
     }

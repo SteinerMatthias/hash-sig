@@ -75,7 +75,6 @@ impl<MH: MessageHash, const CHUNK_SIZE: usize, const NUM_CHUNKS_CHECKSUM: usize>
         Ok(chunks_message)
     }
 
-    #[cfg(test)]
     fn internal_consistency_check() {
         // chunk size must be 1, 2, 4, or 8
         assert!(

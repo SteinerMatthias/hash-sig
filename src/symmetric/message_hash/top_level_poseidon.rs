@@ -170,7 +170,6 @@ where
         map_into_hypercube_part::<DIMENSION, BASE, FINAL_LAYER, POS_OUTPUT_LEN_FE>(&pos_outputs)
     }
 
-    #[cfg(test)]
     fn internal_consistency_check() {
         /// The width of the Poseidon2 permutation used.
         const POSEIDON_WIDTH: usize = 24;

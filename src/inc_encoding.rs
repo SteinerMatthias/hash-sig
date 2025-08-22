@@ -48,7 +48,6 @@ pub trait IncomparableEncoding {
 
     /// Function to check internal consistency of any given parameters
     /// For testing only, and expected to panic if something is wrong.
-    #[cfg(test)]
     fn internal_consistency_check();
 }
 

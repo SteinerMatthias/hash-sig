@@ -140,7 +140,6 @@ pub trait SignatureScheme {
     ///
     /// ### Panics
     /// This function will panic if any of the internal consistency checks fail.
-    #[cfg(test)]
     fn internal_consistency_check();
 }
 

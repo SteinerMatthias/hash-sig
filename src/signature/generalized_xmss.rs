@@ -299,7 +299,6 @@ where
         )
     }
 
-    #[cfg(test)]
     fn internal_consistency_check() {
         // we check consistency of all internally used components
         // namely, PRF, incomparable encoding, and tweak hash

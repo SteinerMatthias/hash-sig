@@ -344,7 +344,6 @@ where
         }
     }
 
-    #[cfg(test)]
     fn internal_consistency_check() {
         assert!(
             CAPACITY < 24,

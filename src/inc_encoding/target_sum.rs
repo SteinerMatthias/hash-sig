@@ -70,7 +70,6 @@ impl<MH: MessageHash, const TARGET_SUM: usize> IncomparableEncoding
         }
     }
 
-    #[cfg(test)]
     fn internal_consistency_check() {
         // base and dimension must not be too large
         assert!(
