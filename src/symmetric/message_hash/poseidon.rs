@@ -77,7 +77,7 @@ fn decode_to_chunks<const DIMENSION: usize, const BASE: usize, const HASH_LEN_FE
 ) -> [u8; DIMENSION] {
     // Combine field elements into one big integer
     let mut acc = BigUint::ZERO;
-    for fe in field_elements {
+    for fe in field_elements.iter().rev() {
         acc = &acc * F::ORDER_U64 + fe.as_canonical_biguint();
     }
 
@@ -580,7 +580,7 @@ mod tests {
 
         // Reconstruct bigint from field elements using base-p
         let mut expected_bigint = BigUint::zero();
-        for fe in &input_field_elements {
+        for fe in input_field_elements.iter().rev() {
             expected_bigint = &expected_bigint * &modulus + fe.as_canonical_biguint();
         }
 
