@@ -1,5 +1,5 @@
-use p3_koala_bear::{
-    KoalaBear, Poseidon2KoalaBear, default_koalabear_poseidon2_16, default_koalabear_poseidon2_24,
+use p3_mersenne_31::{
+    Mersenne31, Poseidon2Mersenne31, default_mersenne31_poseidon2_16, default_mersenne31_poseidon2_24,
 };
 use std::sync::OnceLock;
 
@@ -10,7 +10,7 @@ pub const TWEAK_SEPARATOR_FOR_MESSAGE_HASH: u8 = 0x02;
 pub const TWEAK_SEPARATOR_FOR_TREE_HASH: u8 = 0x01;
 pub const TWEAK_SEPARATOR_FOR_CHAIN_HASH: u8 = 0x00;
 
-type F = KoalaBear;
+type F = Mersenne31;
 
 pub mod hypercube;
 pub mod inc_encoding;
@@ -23,21 +23,21 @@ pub mod symmetric;
 // Returning by value preserves existing call sites that take `&perm`.
 
 /// A lazily-initialized, thread-safe cache for the Poseidon2 permutation with a width of 24.
-static POSEIDON2_24: OnceLock<Poseidon2KoalaBear<24>> = OnceLock::new();
+static POSEIDON2_24: OnceLock<Poseidon2Mersenne31<24>> = OnceLock::new();
 
 /// A lazily-initialized, thread-safe cache for the Poseidon2 permutation with a width of 16.
-static POSEIDON2_16: OnceLock<Poseidon2KoalaBear<16>> = OnceLock::new();
+static POSEIDON2_16: OnceLock<Poseidon2Mersenne31<16>> = OnceLock::new();
 
 /// Poseidon2 permutation (width 24)
-pub(crate) fn poseidon2_24() -> Poseidon2KoalaBear<24> {
+pub(crate) fn poseidon2_24() -> Poseidon2Mersenne31<24> {
     POSEIDON2_24
-        .get_or_init(default_koalabear_poseidon2_24)
+        .get_or_init(default_mersenne31_poseidon2_24)
         .clone()
 }
 
 /// Poseidon2 permutation (width 16)
-pub(crate) fn poseidon2_16() -> Poseidon2KoalaBear<16> {
+pub(crate) fn poseidon2_16() -> Poseidon2Mersenne31<16> {
     POSEIDON2_16
-        .get_or_init(default_koalabear_poseidon2_16)
+        .get_or_init(default_mersenne31_poseidon2_16)
         .clone()
 }
